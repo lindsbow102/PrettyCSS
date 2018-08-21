@@ -1,0 +1,81 @@
+body {
+    font-family: "Lato", sans-serif; /* if Lato is not available, revert to sans-serif */
+    /*font-size: 16px;*/
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+}
+
+.heading-primary {
+    backface-visibility: hidden; /* hides this background element so font doesn't shake when it slides in */
+    color: $color-white;
+    margin-bottom: 6rem;
+    text-transform: uppercase;
+    
+    &--main {
+        display: block; /* Instead of inline -- allows heading to stack */
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+    
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out; /* Faster at beginning, slower at end */
+        /* 
+        animation-delay: 2s;
+        animation-iteration-count: 3; 
+        */
+    }
+    
+    &--sub {
+        animation: moveInRight 1s ease-out; /* shorthand from animation code above */
+        display: block; /* occupies 100% of the width */
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.74rem;    
+    }
+}
+
+.heading-secondary {
+    background-image: linear-gradient(to right, $color-primary, $color-secondary);
+    color: transparent; // This allows us to see background gradient
+    display: inline-block;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    transition: all .2s;
+    -webkit-background-clip: text; // Will clip the gradient to just where the text exists
+
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1); //Scales to 110%
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: $default-font-size;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
+
+
+
+
+
+
+
+    
+
+
+
+

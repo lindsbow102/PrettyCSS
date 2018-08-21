@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+    box-sizing: inherit; /* Everything on page will automatically inherit what we put for box-sizing in the body selector*/
+    margin: 0;
+    padding: 0;
+}
+
+html {
+ font-size: 62.5%;  /* Root font size is always set in the html selector --sets to 10px */   
+}
+
+body {
+    box-sizing: border-box;
+}
+
