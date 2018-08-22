@@ -1,0 +1,39 @@
+.composition {
+    position: relative;
+
+    &__photo {
+        border-radius: 2px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        outline-offset: 2rem; // This will give space between the image and its border on :hover
+        position: absolute;
+        transition: all .2s;
+        width: 55%;
+        z-index: 10; // Number is not really important (??)
+
+        &--p1 {
+            left: 0;
+            top: -2rem;
+        }
+
+        &--p2 {
+            right: 0; // Moving 0 pixels from the right side of the container
+            top: 2rem; // 20 px down from the top
+        }
+
+        &--p3 {
+            left: 20%;
+            top: 10rem;
+        }
+
+        &:hover {
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            outline: 1.5rem solid $color-primary; 
+            transform: scale(1.05) translateY(-.5rem);
+            z-index: 20; // Just needs to be higher than z-index of parent
+        }
+    }
+
+    &:hover &__photo:not(:hover) {
+        transform: scale(.95); // Photos that are NOT being hovered over will shrink
+    }
+}
