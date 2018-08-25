@@ -34,6 +34,15 @@
             background-color: $color-white;
         }
     }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
         
     &::after { /* pseudo element--create a similar looking button that usually hides behind original button */
         border-radius: 10rem;

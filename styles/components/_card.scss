@@ -46,10 +46,12 @@
         transform: rotateY(0);
     }
 
-    // Front side styling
+    // FRONT SIDE STYLING
     &__picture {
         background-blend-mode: screen;
         background-size: cover;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); // Enables this to work across different browsers
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); // Must be listed after -webkit version
         height: 23rem;

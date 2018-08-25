@@ -124,6 +124,9 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
+.u-margin-top-big {
+  margin-top: 8rem; }
+
 .btn {
   /* We want the visited state of this button to look the same as original state */ }
   .btn:link, .btn:visited {
@@ -153,6 +156,11 @@ body {
     color: #777; }
     .btn--white::after {
       background-color: #fff; }
+  .btn--green {
+    background-color: #61d44d;
+    color: #fff; }
+    .btn--green::after {
+      background-color: #61d44d; }
   .btn::after {
     /* pseudo element--create a similar looking button that usually hides behind original button */
     border-radius: 10rem;
