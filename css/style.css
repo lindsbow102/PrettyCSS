@@ -130,6 +130,15 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem; }
 
+.bg-video {
+  height: 100%;
+  left: 0;
+  opacity: .2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1; }
+
 .btn {
   /* We want the visited state of this button to look the same as original state */ }
   .btn:link, .btn:visited {
@@ -450,5 +459,5 @@ body {
   padding: 25rem 0 50rem 0; }
 
 .section-stories {
-  background-color: #f7f7f7;
-  padding: 15rem 0; }
+  padding: 15rem 0;
+  position: relative; }
