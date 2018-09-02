@@ -134,10 +134,15 @@ body {
   height: 100%;
   left: 0;
   opacity: .2;
+  overflow: hidden;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: -1; }
+  .bg-video__content {
+    height: 100%;
+    object-fit: cover;
+    width: 100%; }
 
 .btn {
   /* We want the visited state of this button to look the same as original state */ }
@@ -353,7 +358,7 @@ body {
     transform: translateY(-1.5rem) scale(1.03); }
 
 .story {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
   font-size: 1.6rem;
