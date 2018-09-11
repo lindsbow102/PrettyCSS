@@ -15,6 +15,7 @@
         font-size: 1.5rem;
         padding: 1.5rem 2rem;
         width: 90%;
+        transition: all .3s;
 
         &:focus {
             border-bottom: solid 3px $color-primary;
@@ -44,5 +45,51 @@
         opacity: 0; // Using opacity so we can animate this effect
         transform: translateY(-4rem);
         visibility: hidden;
+    }
+
+    &__radio-group {
+        display: inline-block; // Sets the radio buttons side by side
+        width: 49%;
+    }
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-label {
+        cursor: pointer;
+        font-size: $default-font-size;
+        padding-left: 4.5rem;
+        position: relative;
+    }
+
+    &__radio-button {
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        height: 3rem;
+        left: 0;
+        position: absolute;
+        top: -.4rem;
+        width: 3rem;
+
+        &::after {
+            background-color: $color-primary;
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: 1.3rem;
+            left: 50%;
+            opacity: 0; // Need to be invisible initially
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 1.3rem;
+            transition: opacity .2s;
+        }
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after { 
+        opacity: 1;
     }
 }
