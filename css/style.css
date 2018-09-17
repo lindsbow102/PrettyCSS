@@ -113,22 +113,22 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .u-margin-top-huge {
-  margin-top: 10rem; }
+  margin-top: 10rem !important; }
 
 .bg-video {
   height: 100%;
@@ -146,7 +146,7 @@ body {
 
 .btn {
   /* We want the visited state of this button to look the same as original state */ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     border-radius: 10rem;
     display: inline-block;
     /* allows button to be on same line as other content, but to behave like a block */
@@ -157,7 +157,9 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     transition: all .2s;
-    /* transition property has to be on initial state */ }
+    /* transition property has to be on initial state */
+    border: none;
+    cursor: pointer; }
   .btn:hover {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     /* 3rd value blurs the shadow */
@@ -165,8 +167,9 @@ body {
     .btn:hover::after {
       opacity: 0;
       transform: scaleX(1.4) scaleY(1.6); }
-  .btn:active {
+  .btn:active, .btn:focus {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    outline: none;
     transform: translateY(-0.1rem); }
   .btn--white {
     background-color: #fff;
