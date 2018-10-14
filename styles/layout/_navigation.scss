@@ -8,9 +8,11 @@
         background-color: $color-white;
         border-radius: 50%;
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        cursor: pointer; // Will make the hand appear instead of arrow
         height: 7rem;
         position: fixed;
         right: 6rem; // Because button is 1 rem bigger than __background
+        text-align: center; // To center span element (i.e. hamburger menu)
         top: 6rem; 
         width: 7rem;
         z-index: 2000;
@@ -84,6 +86,7 @@
         }
     }
 
+    // FUNCTIONALITY
     &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
@@ -91,5 +94,53 @@
     &__checkbox:checked ~ &__nav {
         opacity: 1;
         width: 100%;
+    }
+
+    // ICON
+    &__icon {
+        margin-top: 3.5rem;
+        position: relative; 
+
+        &,
+        &::before,
+        &::after {
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+            height: 2px;
+            width: 3rem;
+        }
+
+        &::before,
+        &::after {
+            content: ""; // For before/after properties to actually appear on page, content needs to be defined
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before { top: -.8rem; }
+        &::after { top: .8rem; }
+    }
+
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top:1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg); // 180 - 45 degrees to create spin effect
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
     }
 }
